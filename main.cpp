@@ -22,6 +22,8 @@ void print_coinsKeeper(const coinKeeper& CK) {
 //	return
 //}
 
+int cash(const coinKeeper& CK);
+
 struct myDate {
 	int day = 1;
 	int month = 1;
@@ -176,8 +178,19 @@ int main() {
 
 	delete[] ck.coins;
 	//int year_of_birth(const coinKeeper& CK)
-	
+	std::cout<<cash(ck);
+
 
 
 	return 0;
+}
+int cash(const coinKeeper& CK) {
+	int sum = 0;
+	for (size_t i = 0; i < CK.coins_number; i++)
+	{
+		sum += CK.coins[i];
+		
+	}
+	return sum;
+
 }
